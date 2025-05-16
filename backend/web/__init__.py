@@ -2,7 +2,7 @@ from . import hypertext
 
 
 def main() -> int:
-    from . import server
+    from . import markdown
 
-    hypertext.display()
+    print(markdown.read_markdown("content/blog/semantics.md"))
     return 0

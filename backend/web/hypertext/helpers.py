@@ -22,8 +22,6 @@ def cache_bust(path):
 
             cbcache[path] = int(mtime)
         else:
-            raise FileNotFoundError(
-                f"No such file or directory ?: {p.absolute()}"
-            )
+            raise FileNotFoundError(f"No such file or directory ?: {p.absolute()}")
 
     return f"{path}?vers={cbcache[path]}"

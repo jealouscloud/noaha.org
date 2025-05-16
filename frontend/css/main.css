@@ -71,6 +71,7 @@
 /* ELEMENTS */
 @import "npm:@picocss/pico/css/pico.classless.min.css" layer(elements);
 /* OBJECTS */
+@import "./objects/card.css";
 /* COMPONENTS */
 /* UTILITIES */
-/* @import url("./utilities/debug-outline.css"); */
+/* @import "./utilities/debug-outline.css"; */

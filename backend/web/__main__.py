@@ -2,4 +2,4 @@ import sys
 
 import web
 
-sys.exit(web._main())
+sys.exit(web.main())
