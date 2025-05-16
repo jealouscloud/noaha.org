@@ -1,0 +1,76 @@
+/**
+ * MAIN.CSS - ITCSS MAINTENANCE GUIDE
+ *
+ * This stylesheet follows the Inverted Triangle CSS (ITCSS) methodology.
+ * Sections are ordered by SPECIFICITY (low → high) and REACH (wide → narrow).
+ * Never add styles that break this order - always add to the appropriate layer.
+ *
+ * LAYER GUIDELINES:
+ *
+ * SETTINGS
+ * Variables, custom properties, theme configuration.
+ * No CSS output - preprocessor variables and config only.
+ * Global values: colors, fonts, spacing scales, breakpoints.
+ * Examples: :root { --color-primary: #007bff; }, $font-stack: system-ui;
+ *
+ * TOOLS
+ * Mixins, functions, helper utilities for development.
+ * No CSS output - preprocessor tools only.
+ * Reusable logic for generating CSS programmatically.
+ * Examples: @mixin button-variant(), @function rem(), calc() helpers
+ *
+ * GENERIC
+ * Reset, normalize, box-sizing.
+ * Affects everything. No classes/IDs. Element selectors only.
+ * Examples: *, html, body { }
+ *
+ * ELEMENTS
+ * Bare HTML element styling. No classes.
+ * High reach, low specificity. Typography, base element appearance.
+ * Examples: h1 { }, p { }, a { }
+ *
+ * OBJECTS
+ * Structural design patterns. Layout and container abstractions.
+ * Reusable, unstyled patterns. Single responsibility.
+ * Examples: .o-wrapper { }, .o-layout { }, .o-media { }
+ *
+ * COMPONENTS
+ * Designed, recognizable UI pieces. The bulk of your work goes here.
+ * One component per file. Specific purpose, multiple elements.
+ * Examples: .c-button { }, .c-nav { }, .c-hero { }
+ *
+ * UTILITIES
+ * Single-purpose helpers. High specificity, low reach.
+ * Override anything when needed. Use sparingly.
+ * Examples: .u-text-center { }, .u-margin-large { }, .u-hide { }
+ *
+ * MAINTENANCE RULES:
+ * 1. New styles go in the most specific appropriate layer
+ * 2. Don't force specificity - move to higher layer instead
+ * 3. Keep specificity graph trending upward
+ * 4. One component per file when possible
+ * 5. Document hacks and edge cases in comments
+ * 6. Remove unused code regularly
+ *
+ * WHEN TO ADD WHERE:
+ * - Site-wide changes? → GENERIC/ELEMENTS
+ * - Reusable layout pattern? → OBJECTS
+ * - New UI component? → COMPONENTS (new file)
+ * - One-off override needed? → UTILITIES
+ * - Existing component variant? → Modify COMPONENT file
+ *
+ * Remember: Design from generic to specific, like sculpting from mountain to detail.
+ */
+
+@layer settings, tools, generic, elements, objects, components, utilities;
+
+/* SETTINGS */
+@import "./settings/fonts.css" layer(settings);
+/* TOOLS */
+/* GENERIC */
+/* ELEMENTS */
+@import "npm:@picocss/pico/css/pico.classless.min.css" layer(elements);
+/* OBJECTS */
+/* COMPONENTS */
+/* UTILITIES */
+/* @import url("./utilities/debug-outline.css"); */

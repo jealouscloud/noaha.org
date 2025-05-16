@@ -1,0 +1,33 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "parcel build --dist-dir ../public/",
+    "lint": "eslint",
+    "fmt": "eslint --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "source": [
+    "bundle.js",
+    "css/main.css",
+    "vanillajs/*.js"
+  ],
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "esbuild": "^0.25.1",
+    "parcel": "latest"
+  },
+  "dependencies": {
+    "@eslint/js": "^9.26.0",
+    "@picocss/pico": "^2.1.1",
+    "eslint": "^9.26.0",
+    "globals": "^16.1.0",
+    "htmx.org": "^1.9.12",
+    "lit": "^3.2.1",
+    "parcel": "^2.15.0"
+  }
+}

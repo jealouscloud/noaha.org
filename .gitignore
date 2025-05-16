@@ -1,0 +1,16 @@
+# python generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# this directory is generated
+public/
+
+# venv
+.venv
+.mypy_cache
+**/node_modules
+**/.parcel-cache
