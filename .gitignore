@@ -8,6 +8,7 @@ wheels/
 
 # this directory is generated
 public/
+./data/
 
 # venv
 .venv

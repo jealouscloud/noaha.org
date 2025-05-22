@@ -5,6 +5,7 @@ pkgs.mkShell {
     pkgs.nodejs_23
     pkgs.pnpm
     pkgs.rsync
+    pkgs.tree
   ];
 }
 

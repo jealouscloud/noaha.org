@@ -4,6 +4,7 @@ from . import hypertext
 from .data import store
 
 app = Flask(__name__, static_folder="../../public")
+store.init()
 
 
 @app.route("/")
