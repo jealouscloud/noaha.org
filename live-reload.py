@@ -19,11 +19,16 @@ import html_compose.live as live
 assert shutil.which("rye"), "rye not found, please install it."
 assert shutil.which("pnpm"), "pnpm not found, please install it."
 
+
 live.server(
-    daemon=live.ShellCommand("rye run flask  --app  ./backend/web/server.py run"),
-    daemon_delay=1,
+    daemon=live.ShellCommand(
+        "rye run flask --app  ./backend/web/server.py run"
+    ),
+    daemon_delay=0.2,
     conds=[
-        live.WatchCond(path_glob="backend/**/*.py", action=live.ShellCommand("date")),
+        live.WatchCond(
+            path_glob="backend/**/*.py", action=live.ShellCommand("date")
+        ),
         live.WatchCond(
             ["frontend/**/*.js", "frontend/**/*.css"],
             action=live.ShellCommand("cd frontend && pnpm build"),
@@ -36,4 +41,5 @@ live.server(
     ],
     host="localhost",
     port=51353,
+    livereload_delay=0.5,
 )
