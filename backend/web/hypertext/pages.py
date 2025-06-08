@@ -215,5 +215,14 @@ def demo():
     ]
 
 
+def home():
+    return common.create(
+        content=ht.section[
+            ht.div["Welcome to the Hypertext World!"],
+            ht.a(href="/blog")["Go to the Blog"],
+        ]
+    )
+
+
 def blog_page(post: models.blog.Post):
     return common.create(content=blog.post(post))
