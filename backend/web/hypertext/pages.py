@@ -1,7 +1,7 @@
 import html_compose as ht
 
 from .. import models
-from . import common
+from . import blog, common
 
 
 def demo():
@@ -216,4 +216,4 @@ def demo():
 
 
 def blog_page(post: models.blog.Post):
-    return common.create(content=demo())
+    return common.create(content=blog.post(post))

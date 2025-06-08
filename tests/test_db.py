@@ -1,16 +1,14 @@
-from datetime import datetime, timedelta
+from datetime import datetime
 
-import sqlalchemy
-import sqlite_utils
+import web.data.connectors.sqlite as sqlite_connector
+from web.data.adapters.users import SqliteUsersAdapter as users_adapter
 
 
 def test_users():
-    import web.data.adapters._sqlite as sqlite_adapter
-
     # No persistence
-    sqlite_adapter._resolve_path = lambda x: ":memory:"
+    sqlite_connector._resolve_path = lambda x: ":memory:"
 
-    a = sqlite_adapter.SqliteUsersAdapter()
+    a = users_adapter()
 
     a.init()
 
@@ -26,5 +24,7 @@ def test_users():
         now = datetime.now().astimezone()
         u = a.session_token_to_user(ses)
         last_login = a.get_user(1).last_login
-        assert last_login > now
-    assert False
+        assert now > last_login, "Last login should be updated"
+
+    with a:
+        assert a.session_token_to_user("invalid_token") is None

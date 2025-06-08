@@ -1,3 +1,10 @@
 from collections import namedtuple
+from datetime import datetime
+from typing import NamedTuple
 
-Post = namedtuple("Post", ["title", "content", "date"])
+
+class Post(NamedTuple):
+    title: str
+    slug: str
+    content: str
+    date: datetime
