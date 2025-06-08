@@ -6,6 +6,7 @@ pkgs.mkShell {
     pkgs.pnpm
     pkgs.rsync
     pkgs.tree
+    pkgs.sqlite
   ];
 }
 
