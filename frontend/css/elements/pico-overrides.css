@@ -1,0 +1,4 @@
+/* PicoCSS overrides */
+:root {
+    --pico-font-family: var(--font-system);
+}

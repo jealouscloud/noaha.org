@@ -69,7 +69,9 @@
 /* TOOLS */
 /* GENERIC */
 /* ELEMENTS */
-@import "npm:@picocss/pico/css/pico.classless.min.css" layer(elements);
+@import "npm:@picocss/pico/css/pico.purple.css" layer(elements);
+@import "./elements/pico-overrides.css" layer(elements);
+@import "./elements/page.css" layer(elements);
 /* OBJECTS */
 @import "./objects/card.css";
 /* COMPONENTS */
