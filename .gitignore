@@ -15,3 +15,6 @@ public/
 .mypy_cache
 **/node_modules
 **/.parcel-cache
+
+# data
+data/*.db*
