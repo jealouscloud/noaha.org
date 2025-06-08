@@ -2,9 +2,8 @@ from collections import namedtuple
 
 import mistletoe
 import yaml
-from html_compose import unsafe_text
 
-Markdown = namedtuple("Markdown", ["frontmatter", "html_content"])
+Markdown = namedtuple("Markdown", ["frontmatter", "html_content", "preview"])
 
 
 def read_markdown(file_path):
@@ -24,6 +23,11 @@ def read_markdown(file_path):
         frontmatter = yaml.load(md_content[:fm_end], yaml.CSafeLoader)
 
     html_content = mistletoe.markdown(md_content[md_start:])
+    preview = mistletoe.markdown(
+        "\n".join(md_content[md_start:].splitlines()[0:3])
+    )
     return Markdown(
-        frontmatter=frontmatter, html_content=unsafe_text(html_content)
+        frontmatter=frontmatter,
+        html_content=html_content,
+        preview=preview,
     )

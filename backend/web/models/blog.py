@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import NamedTuple
+from typing import NamedTuple, Optional
 
 
 class Post(NamedTuple):
@@ -7,3 +7,4 @@ class Post(NamedTuple):
     slug: str
     content: str
     date: datetime
+    preview: Optional[str] = None

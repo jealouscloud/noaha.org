@@ -52,6 +52,7 @@ def post_list(offset: int = 0, limit: int = 100):
                     slug=row.slug,
                     content="",
                     date=row.created,
+                    preview=row.preview,
                 )
             )
     return postlist

@@ -14,6 +14,7 @@ class Posts(Base):
     title = sqlalchemy.Column(sqlite_dialect.TEXT())
     slug = sqlalchemy.Column(sqlite_dialect.TEXT())
     content = sqlalchemy.Column(sqlite_dialect.TEXT())
+    preview = sqlalchemy.Column(sqlite_dialect.TEXT())
     created = sqlalchemy.Column(TZDateTime, nullable=False)
     last_edit = sqlalchemy.Column(TZDateTime, nullable=False)
     display = sqlalchemy.Column(sqlite_dialect.BOOLEAN(), default=True)

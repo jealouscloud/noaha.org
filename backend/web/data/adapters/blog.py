@@ -15,6 +15,7 @@ class types:
         title: str
         slug: str
         created: datetime
+        preview: str
 
 
 class SqliteBlogPostsAdapter(SqliteConnector):
@@ -45,7 +46,7 @@ class SqliteBlogPostsAdapter(SqliteConnector):
         conn = self.connection
         post = blog.Posts
         result = conn.execute(
-            select(post.title, post.slug, post.created)
+            select(post.title, post.slug, post.created, post.preview)
             .order_by(post.created.desc())
             .offset(offset)
             .limit(limit)
@@ -108,6 +109,7 @@ class SqliteBlogPostsAdapter(SqliteConnector):
                 "slug": md.frontmatter.get("slug", file_path.stem),
                 "title": md.frontmatter.get("title", file_path.stem),
                 "content": md.html_content,
+                "preview": md.preview,
             }
 
         s = file_path.stat()
