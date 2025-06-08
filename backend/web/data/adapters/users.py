@@ -1,13 +1,9 @@
 import secrets
-from datetime import date, datetime, timedelta, timezone
+from datetime import datetime, timedelta
 from hashlib import md5
-from pathlib import Path
-from typing import Any, Literal, NamedTuple, Optional
+from typing import NamedTuple
 
-from flask import sessions
-from loguru import logger
-from sqlalchemy import delete, insert, select, update
-from web.markdown import read_markdown
+from sqlalchemy import insert, select, update
 
 from ..connectors.sqlite import SqliteConnector
 from ..schemas import users

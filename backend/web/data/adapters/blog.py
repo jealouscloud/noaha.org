@@ -1,9 +1,9 @@
 from datetime import datetime
 from pathlib import Path
-from typing import Any, Literal, NamedTuple, Optional
+from typing import NamedTuple
 
 from loguru import logger
-from sqlalchemy import delete, insert, select, update
+from sqlalchemy import insert, select, update
 from web.markdown import read_markdown
 
 from ..connectors.sqlite import SqliteConnector

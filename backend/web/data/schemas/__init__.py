@@ -1,7 +1,5 @@
 from datetime import datetime
 
-import sqlalchemy.dialects.sqlite as sqlite_dialect
-from sqlalchemy.orm import declarative_base
 from sqlalchemy.types import String, TypeDecorator
 
 
