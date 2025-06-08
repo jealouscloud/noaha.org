@@ -1,3 +1,6 @@
+
+
+
 Semantics and Typography
 ========================
 
@@ -28,7 +31,7 @@ The subheading that should tell you more about it
 
 #### Text Level Semantics
 
-I'm that paragraph with some *emphasis on the text-level semantics*where I might feel the need to **share some strong opinions**. This paragraph even uses elements that should have been deprecated, but instead the W3C redefined them. And that's dumb, because formerly presentational elements now do silly things like call a thing to your **attention**for no good reason, or tell you that something is mispelled, or the name of a boat --- which makes as much sense as building another *Titanic*. It makes no sense, but ... *c'est la vie*.
+I'm that paragraph with some *emphasis on the text-level semantics*where I might feel the need to **share some strong opinions**. This paragraph even uses elements that should have been deprecated, but instead the W3C redefined them. And that's dumb, because formerly presentational elements now do silly things like call a thing to your **attention** for no good reason, or tell you that something is mispelled, or the name of a boat --- which makes as much sense as building another *Titanic*. It makes no sense, but ... *c'est la vie*.
 
 #### Editing semantics
 
