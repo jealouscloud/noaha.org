@@ -15,19 +15,21 @@ a crack.
 We operate in infrastructure, which works in domains.
 
 If you don't know how to categorize something, ask the wizard of the castle.
-if you don't think they're right, drill down. If all else fails, ask a friend.
-_editors note_: this is the right way to treat ai.
+If you don't think they're right, drill down. If all else fails, ask a friend.
 
-If you were wondering what the theme implies we are, we'd be dwarves.
+**editors note**: a drunk wizard is probably a fair characterization of ai
+
+If you were wondering what the theme implies we are, I like to think we'd be 
+dwarves.
 
 The sign post:
 
 ### HELP WANTED
 
-Infrastructure maintainer
-Idea haver
-Rhythm keeper
-Spirit bringer
+- Infrastructure maintainer
+- Idea haver
+- Rhythm keeper
+- Spirit bringer
 
 ### HELP NOT WANTED:
 
@@ -132,4 +134,59 @@ When you exceed the estimate, a message blips in a channel. You're pinged and as
 
 # Solid Contributions
 
-Ideally, a structure exists.
+Ideally, a structure exists. We contribute to this ideal to improve our quality of life.
+
+## Domain contributions
+Solid contributions don't scramble the domain. They add to it.
+
+* Follow patterns within the domain, if they exist
+* Prefer the domain's native way to accomplish something when reasonable 
+i.e. `procutil` vs `subprocess.run("ps")`
+* If you deviate from the typical pattern, document why
+* Update domain knowledge as you learn
+
+
+## Interfaces in code
+We hope for our code to be pluggable as it evolves. Adaptability is a major
+feature in repositories. Between shipping for multiple distros, configuration
+agnosticism, database ORM, there are many common ways we prioritize allowing
+any component we produce to adapt to change as it happens. 
+
+Some tips:
+* Separate logic types where you can: databases, endpoints, application logic, 
+process calls
+* Define variables where you could reasonably use them later and implementing 
+correctly now is relatively simple.
+
+## Leaving a trail
+We might have to follow our own footsteps one day to understand why a change 
+went wrong.
+
+
+## Performing Simple Assignments
+Scoping is key in change requests. Simple assignments often include all the 
+information you need. Sometimes they are quite lacking. If you are having 
+difficulty scoping a change or problem, it's usually a good time to ask the 
+team for input.
+
+While doing the task itself:
+* Log your understanding as you can
+* Create a branch for any repo change matching the ticket ID.
+* Note when expectation and reality don't converge
+* If a task feels harder than it should be, maybe it is - if you notice this, 
+vocalizing it helps expose neglected systems, like CI/CD.
+
+
+## Pattern observation
+When a system isn't working, reporting the problem as a ticket with the information
+you can quickly acquire helps the team act effectively.
+
+
+## Individual Initiative
+Sometimes you must create a new component yourself.
+
+When doing this:
+* Ensure the component fits well into its environment. Beyond your own reasoning,
+checking in with team members can help with this goal.
+* Try to use git early, including using a branch when you start work.
+* Ensure there's accurately placed documentation.
