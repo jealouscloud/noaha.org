@@ -32,11 +32,14 @@ live.server(
         live.WatchCond(
             ["frontend/**/*.js", "frontend/**/*.css"],
             action=live.ShellCommand("cd frontend && pnpm build"),
+            ignore_glob=["frontend/node_modules/"],
             no_reload=True,
+            server_reload=False,
         ),
         live.WatchCond(
             "public/**/*",
             action=None,
+            server_reload=False,
         ),
     ],
     host="localhost",
