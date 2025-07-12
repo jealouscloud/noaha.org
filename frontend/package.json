@@ -26,6 +26,7 @@
     "@picocss/pico": "^2.1.1",
     "eslint": "^9.26.0",
     "globals": "^16.1.0",
+    "highlight.js": "^11.11.1",
     "htmx.org": "^1.9.12",
     "lit": "^3.2.1",
     "parcel": "^2.15.0"

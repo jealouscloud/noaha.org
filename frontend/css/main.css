@@ -78,4 +78,6 @@
 @import "./objects/header.css" layer(objects);
 /* COMPONENTS */
 /* UTILITIES */
+@import "npm:highlight.js/scss/dark.scss" layer(elements);
+
 /* @import "./utilities/debug-outline.css"; */

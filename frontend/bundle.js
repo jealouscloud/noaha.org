@@ -7,3 +7,10 @@ window.htmx = htmx; // recommended by htmx docs
 window.libs = {
     "lit": lit
 };
+
+// Using require
+const hljs = require('highlight.js/lib/core');
+
+// Load any languages you need
+hljs.registerLanguage('python', require('highlight.js/lib/languages/python'));
+hljs.highlightAll();
