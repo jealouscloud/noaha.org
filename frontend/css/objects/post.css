@@ -1,0 +1,10 @@
+.o-post {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    hr {
+        flex-grow: 1;
+        border-style: dashed;
+        border-color: blue;
+    }
+}

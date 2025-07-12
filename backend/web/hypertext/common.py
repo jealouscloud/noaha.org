@@ -1,21 +1,18 @@
 import html_compose as ht
-from html_compose import (
-    a,
-    aside,
-    body,
-    h2,
-    nav,
-    p,
-    section,
-)
+from html_compose import a, aside, body, div, h2, nav, p, section
 
 from .helpers import cache_bust
 
 
 def header():
-    return ht.header(id="header", class_="container-fluid")[
-        section()[h2["Noah Ablaseau"], p[""]],
-        nav(class_="navbar")[
+    return ht.header(id="header", class_="container-fluid o-header")[
+        [
+            div[
+                h2(class_="title")[a(href="/")["Noah Ablaseau"]],
+                p(class_="subheading")["Nothing is ever just something. "],
+            ],
+        ],
+        nav(class_=["navbar"])[
             a(href="/")["demo"],
             a(href="/blog")["blog"],
             a(href="/about")["about"],
@@ -25,7 +22,6 @@ def header():
 
 def main(*args, **kwargs):
     return ht.main(class_="container-fluid")[
-        section(id="about")["Nothing is ever just something. "],
         section(id="content", class_=["content"])[kwargs.get("content", []),],
         aside(class_="sidebar")["Sidebar content like recent posts or links "],
     ]

@@ -3,4 +3,10 @@
     flex-direction: column;
     align-items: stretch;
     justify-content: stretch;
+    border-style: solid;
+    border-width: 2px;
+    box-shadow: 0px 0px 5px 5px rgb(0 0 0 / 20%);
+    background-color: var(--pico-background-color);
+    border-image: linear-gradient(90deg,
+            #2176FF, #43E8ED, #6FFFBF, #32FF7A, #FF53A1, #A259F7, #23272A, #2176FF) 1;
 }

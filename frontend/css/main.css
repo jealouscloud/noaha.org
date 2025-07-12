@@ -73,7 +73,9 @@
 @import "./elements/pico-overrides.css" layer(elements);
 @import "./elements/page.css" layer(elements);
 /* OBJECTS */
-@import "./objects/card.css";
+@import "./objects/card.css" layer(objects);
+@import "./objects/post.css" layer(objects);
+@import "./objects/header.css" layer(objects);
 /* COMPONENTS */
 /* UTILITIES */
 /* @import "./utilities/debug-outline.css"; */

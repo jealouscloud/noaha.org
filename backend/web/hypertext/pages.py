@@ -218,8 +218,10 @@ def demo():
 def home():
     return common.create(
         content=ht.section[
-            ht.div["Welcome to the Hypertext World!"],
-            ht.a(href="/blog")["Go to the Blog"],
+            ht.article(class_="o-card")[
+                ht.div["Welcome to the Hypertext World!"],
+                ht.a(href="/blog")["Go to the Blog"],
+            ]
         ]
     )
 
