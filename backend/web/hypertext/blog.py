@@ -30,7 +30,6 @@ def post(post: blog.Post):
             # horizontal split
             hr(),
             unsafe_text(post.content),
-            button["Demo button"],
         ],
     ]
 
