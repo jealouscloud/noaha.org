@@ -8,7 +8,7 @@ It also enables foregin key constraints and uses WAL mode.
 """
 
 from pathlib import Path
-from typing import Any, Literal, Optional
+from typing import Any, Literal, Mapping, Optional
 
 import sqlalchemy
 from sqlalchemy import (
@@ -23,6 +23,8 @@ from sqlalchemy.engine.interfaces import (
 )
 
 CONNECTORS = {}
+
+DEFAULT_KWARGS = {"pool_size": 100}
 
 
 def _resolve_path(title) -> Path:
@@ -41,7 +43,11 @@ class SqliteConnector:
     ENGINES = {}
 
     def __init__(
-        self, path, mode: Literal["ro", "rw", "rwc"] = "rw", timeout=5
+        self,
+        path,
+        mode: Literal["ro", "rw", "rwc"] = "rw",
+        timeout=5,
+        **engine_kwargs: Optional[Mapping],
     ):
         self.path = _resolve_path(path)
 
@@ -52,13 +58,18 @@ class SqliteConnector:
 
         self.mode = mode
         self.timeout = timeout
+        if engine_kwargs is None:
+            engine_kwargs = {}
+
+        _engine_kwargs = DEFAULT_KWARGS.copy() | engine_kwargs
 
         uri = f"{self.path}:{self.mode}"
         if uri in CONNECTORS:
             engine = CONNECTORS[uri]
         else:
             engine = sqlalchemy.create_engine(
-                f"sqlite:///{self.connect_string()}"
+                f"sqlite:///{self.connect_string()}",
+                **_engine_kwargs,
             )
             CONNECTORS[uri] = engine
         self.engine = engine
