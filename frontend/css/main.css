@@ -68,9 +68,9 @@
 @import "./settings/fonts.css" layer(settings);
 /* TOOLS */
 /* GENERIC */
+@import "npm:@picocss/pico/css/pico.purple.css" layer(generic);
+@import "./generic/pico-overrides.css" layer(generic);
 /* ELEMENTS */
-@import "npm:@picocss/pico/css/pico.purple.css" layer(elements);
-@import "./elements/pico-overrides.css" layer(elements);
 @import "./elements/page.css" layer(elements);
 /* OBJECTS */
 @import "./objects/card.css" layer(objects);
