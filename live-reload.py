@@ -29,12 +29,12 @@ live.server(
         live.WatchCond(
             path_glob="backend/**/*.py", action=live.ShellCommand("date")
         ),
+        live.WatchCond(path_glob="content/*.md", action=None),
         live.WatchCond(
             ["frontend/**/*.js", "frontend/**/*.css"],
             action=live.ShellCommand("cd frontend && pnpm build"),
             ignore_glob=["frontend/node_modules/"],
-            no_reload=True,
-            server_reload=False,
+            reload=False,
         ),
         live.WatchCond(
             "public/**/*",
