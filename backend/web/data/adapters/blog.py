@@ -47,6 +47,7 @@ class SqliteBlogPostsAdapter(SqliteConnector):
         post = blog.Posts
         result = conn.execute(
             select(post.title, post.slug, post.created, post.preview)
+            .where(post.display)
             .order_by(post.created.desc())
             .offset(offset)
             .limit(limit)
@@ -108,6 +109,7 @@ class SqliteBlogPostsAdapter(SqliteConnector):
                 "filepath": str(file_path),
                 "slug": md.frontmatter.get("slug", file_path.stem),
                 "title": md.frontmatter.get("title", file_path.stem),
+                "display": md.frontmatter.get("display", True),
                 "content": md.html_content,
                 "preview": md.preview,
             }
