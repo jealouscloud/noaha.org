@@ -48,6 +48,7 @@ class SqliteBlogPostsAdapter(SqliteConnector):
         result = conn.execute(
             select(post.title, post.slug, post.created, post.preview)
             .where(post.display)
+            .order_by(post.id.desc())
             .order_by(post.created.desc())
             .offset(offset)
             .limit(limit)
@@ -105,6 +106,7 @@ class SqliteBlogPostsAdapter(SqliteConnector):
             generate markdown content and metadata
             """
             md = read_markdown(file_path)
+            id = md.frontmatter.get("id", None)
             return {
                 "filepath": str(file_path),
                 "slug": md.frontmatter.get("slug", file_path.stem),
@@ -112,7 +114,7 @@ class SqliteBlogPostsAdapter(SqliteConnector):
                 "display": md.frontmatter.get("display", True),
                 "content": md.html_content,
                 "preview": md.preview,
-            }
+            } | (dict(id=id) if id is not None else {})
 
         s = file_path.stat()
         mdatetime = datetime.fromtimestamp(s.st_mtime).astimezone()

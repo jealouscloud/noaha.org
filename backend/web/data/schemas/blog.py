@@ -20,6 +20,7 @@ class Posts(Base):
     display = sqlalchemy.Column(sqlite_dialect.BOOLEAN(), default=True)
     # Unique constraints
     __table_args__ = (
+        sqlalchemy.UniqueConstraint("id"),
         sqlalchemy.UniqueConstraint("title"),
         sqlalchemy.UniqueConstraint("filepath"),
         sqlalchemy.UniqueConstraint("slug"),
