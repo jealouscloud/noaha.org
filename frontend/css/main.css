@@ -70,6 +70,7 @@
 /* GENERIC */
 @import "npm:@picocss/pico/css/pico.purple.css" layer(generic);
 @import "./generic/pico-overrides.css" layer(generic);
+@import "./generic/smooth-scrolling.css" layer(generic);
 /* ELEMENTS */
 @import "./elements/page.css" layer(elements);
 /* OBJECTS */
