@@ -19,6 +19,11 @@ def blog_page():
     )
 
 
+@app.route("/about")
+def about_page():
+    return hypertext.pages.about_page()
+
+
 @app.route("/blog/<slug>")
 def blog_post(slug: str):
     post = store.blog_post(slug)
