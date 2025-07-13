@@ -1,6 +1,6 @@
 
 html {
-    background: linear-gradient(90deg,rgba(252, 252, 252, 1) 0%, rgba(250, 250, 250, 1) 56%, rgba(235, 235, 235, 1) 100%);
+    background: var(--pico-background);
 }
 body {
     font-family: var(--font-system);
