@@ -29,7 +29,7 @@ live.server(
         live.WatchCond(
             path_glob="backend/**/*.py", action=live.ShellCommand("date")
         ),
-        live.WatchCond(path_glob="content/*.md", action=None),
+        live.WatchCond(path_glob="content/**/*.md", action=None),
         live.WatchCond(
             ["frontend/**/*.js", "frontend/**/*.css"],
             action=live.ShellCommand("cd frontend && pnpm build"),
@@ -44,5 +44,5 @@ live.server(
     ],
     host="localhost",
     port=51353,
-    livereload_delay=0.5,
+    livereload_delay=0.7,
 )
