@@ -4,16 +4,20 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px;
-    border-bottom: 1px solid #ddd;
-    background-color: var(--pico-background-color);
+    border-bottom: 10px solid var(--pico-primary-underline);
+    background-color: var(--pico-primary-background);
 
     .title {
         margin-bottom: 0;
+        a {
+            color: var(--pico-primary-inverse);
+        }
     }
     
     .subheading {
         margin: 0;
-        color: var(--pico-secondary);
+        color: var(--pico-primary-inverse);
+        opacity: 0.6;
     }
     
     .navbar {
@@ -21,5 +25,18 @@
         flex-direction: row;
         align-items: center;
         gap: 1em;
+        a {
+            color: var(--pico-primary-inverse);
+            opacity: 0.5;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+
+            &:hover {
+                background-color: var(--pico-primary-hover);
+                opacity: 1;
+            }
+        }
     }
 }
