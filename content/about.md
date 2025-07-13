@@ -28,7 +28,9 @@ Some things I can show you:
 - Fun fact: This website is built with html-compose.
 
 #### Misc
-
+- KDE Improvements
+  - [Activity switch hotkeys extension](https://github.com/jealouscloud/kwin-activity-hotkeys) - mimic missing i3 features
+  - Rofi based [Keyboard shortcut selector](https://github.com/jealouscloud/kshortcut-rofi). I built this because I like tiling but not memorizing the keys for every layout.
 - [SaltStack TLS CA](https://github.com/jealouscloud/salt-tls-ca)
   - Orchestation for TLS certificates in distributed systems
 
