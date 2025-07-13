@@ -1,4 +1,12 @@
 /* PicoCSS overrides */
 :root {
     --pico-font-family: var(--font-system);
+
+    h1, h2, h3, h4, h5, h6 {
+        /* Pico annoyingly hardcodes this at the 
+            element level, so we have to override it */
+
+        /* Default is like 2.65 which is too large */
+        --pico-typography-spacing-top: 1rem;
+    }
 }

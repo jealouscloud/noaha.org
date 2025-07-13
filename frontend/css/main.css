@@ -75,6 +75,7 @@
 /* OBJECTS */
 @import "./objects/card.css" layer(objects);
 @import "./objects/post.css" layer(objects);
+@import "./objects/post-list.css" layer(objects);
 @import "./objects/header.css" layer(objects);
 /* COMPONENTS */
 /* UTILITIES */

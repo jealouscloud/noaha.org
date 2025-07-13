@@ -9,6 +9,7 @@ from html_compose import (
     h4,
     hr,
     li,
+    p,
     section,
     span,
     time,
@@ -37,10 +38,10 @@ def post(post: blog.Post):
 def page_list(posts: list[blog.Post]):
     return section(id="post-list", class_="content")[
         section(class_="o-card")[
-            ul[
+            ul(class_="o-post-list")[
                 [
                     li()[
-                        div(class_="o-post")[
+                        div(class_="post")[
                             h4()[a(href=f"/blog/{post.slug}")[post.title]],
                             hr(),
                             time[post.date.strftime("%b-%d-%Y")],
