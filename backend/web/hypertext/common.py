@@ -1,3 +1,6 @@
+from datetime import datetime
+from functools import cache
+
 import html_compose.elements as e
 from html_compose import HTML5Document, a, aside, body, div, h2, nav, p, section
 
@@ -23,12 +26,15 @@ def header():
 def main(*args, **kwargs):
     return e.main(class_="container-fluid")[
         section(id="content", class_=["content"])[kwargs.get("content", []),],
-        aside(class_="sidebar")["Sidebar content like recent posts or links "],
+        # aside(class_="sidebar")["Sidebar content like recent posts or links "],
     ]
 
 
+@cache
 def footer():
-    return e.footer(class_="container-fluid")["Contact info, copyright "]
+    return e.footer(class_="container-fluid")[
+        f"©{datetime.now().year} Noah Ablaseau"
+    ]
 
 
 def page(*args, **kwargs) -> body:
