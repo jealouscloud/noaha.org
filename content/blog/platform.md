@@ -1,4 +1,5 @@
 ---
+title: The Platform
 post-date: 5-16-25
 slug: platform
 id: 1

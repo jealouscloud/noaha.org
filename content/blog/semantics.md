@@ -1,4 +1,6 @@
-
+---
+display: false
+---
 
 
 Semantics and Typography
@@ -9,7 +11,7 @@ An Introduction
 
 This little baseline has ( almost) all of the content flow and phrasing elements. It attempts to use all of those elements according to their defined semantics. It also tries to provide a baseline style for those elements. So this isn't a normalize or a reset, but maybe the first set of styles you'd add before you start branding stuff. Here is the [full list of the elements](https://www.w3.org/TR/html5/).
 
-There's also a [Form Baseline](https://codepen.io/paceaux/pen/mdmBPPx)and a [Table baseline](https://codepen.io/paceaux/pen/KKWwyMa)if that's more of your thing.
+There's also a [Form Baseline](https://codepen.io/paceaux/pen/mdmBPPx) and a [Table baseline](https://codepen.io/paceaux/pen/KKWwyMa) if that's more of your thing.
 
 Here is a collection of headings
 ================================
