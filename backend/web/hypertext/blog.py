@@ -1,15 +1,11 @@
-import html_compose.elements as e
 from html_compose import (
     a,
     article,
-    button,
     div,
     h2,
-    h3,
     h4,
     hr,
     li,
-    p,
     section,
     span,
     time,

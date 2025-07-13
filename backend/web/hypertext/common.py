@@ -1,10 +1,12 @@
+"""
+In this file we define the common HTML structure for the web application.
+"""
+
 from datetime import datetime
 from functools import cache
 
 import html_compose.elements as e
-from html_compose import HTML5Document, a, aside, body, div, h2, nav, p, section
-
-from .helpers import cache_bust
+from html_compose import a, body, div, h2, nav, p, section
 
 
 def header():
@@ -23,9 +25,13 @@ def header():
 
 
 def main(*args, **kwargs):
+    """
+    This is the main content of the page
+
+    It accepts dynamic arguments to allow for reasonable extension.
+    """
     return e.main(class_="container-fluid")[
-        section(id="content", class_=["content"])[kwargs.get("content", []),],
-        # aside(class_="sidebar")["Sidebar content like recent posts or links "],
+        section(class_=["content"])[kwargs.get("content", []),],
     ]
 
 
@@ -51,22 +57,3 @@ def fonts():
             rel=["stylesheet"],
         ),
     ]
-
-
-def create(*args, **kwargs):
-    doc = HTML5Document(
-        title="Noah Ablaseau",
-        head=[
-            e.script(src=cache_bust("/public/bundle.js")),
-            e.script(src=cache_bust("/public/vanillajs/index.js")),
-            e.link(rel="stylesheet", href=cache_bust("/public/css/main.css")),
-            e.link(
-                rel="icon",
-                href=cache_bust("/public/assets/favicon.ico"),
-                type="image/x-icon",
-            ),
-            fonts(),
-        ],
-        body=page(*args, **kwargs),
-    )
-    return doc

@@ -1,6 +1,6 @@
 from pathlib import Path
 
-cbcache = {}
+cachebust_cache = {}
 
 
 def cache_bust(path):
@@ -10,18 +10,20 @@ def cache_bust(path):
 
     It is for cachebusting.
     """
-    global cbcache
-    if path not in cbcache:
+    global cachebust_cache
+    if path not in cachebust_cache:
         p = Path(".").resolve()
         # pathlib will think we mean absolute if path starts with a slash
         p = p / path.lstrip("/")
         if p.exists():
             mtime = p.stat().st_mtime
-            if len(cbcache) > 1000:  # clear cache if it's too big
-                cbcache.clear()
+            if len(cachebust_cache) > 10000:  # clear cache if it's too big
+                cachebust_cache.clear()
 
-            cbcache[path] = int(mtime)
+            cachebust_cache[path] = int(mtime)
         else:
-            raise FileNotFoundError(f"No such file or directory ?: {p.absolute()}")
+            raise FileNotFoundError(
+                f"No such file or directory ?: {p.absolute()}"
+            )
 
-    return f"{path}?vers={cbcache[path]}"
+    return f"{path}?vers={cachebust_cache[path]}"

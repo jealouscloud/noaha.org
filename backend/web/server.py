@@ -9,14 +9,12 @@ store.init()
 
 @app.route("/")
 def hello_world():
-    return hypertext.pages.home()
+    return hypertext.pages.home_page()
 
 
 @app.route("/blog")
 def blog_page():
-    return hypertext.common.create(
-        content=hypertext.blog.page_list(store.post_list())
-    )
+    return hypertext.pages.blog_list_page(store.post_list())
 
 
 @app.route("/about")
@@ -29,7 +27,7 @@ def blog_post(slug: str):
     post = store.blog_post(slug)
     if not post:
         return "Blog post not found", 404
-    return hypertext.common.create(content=hypertext.blog.post(post))
+    return hypertext.pages.blog_page(post)
 
 
 app.debug = True
