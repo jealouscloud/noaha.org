@@ -18,6 +18,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@parcel/transformer-sass": "2.15.0",
     "esbuild": "^0.25.1",
     "parcel": "latest"
   },
