@@ -22,7 +22,7 @@ flask==3.1.1
     # via web-demo
 greenlet==3.2.2
     # via sqlalchemy
-html-compose==0.8.1
+html-compose==0.9.0
     # via web-demo
 idna==3.10
     # via anyio
