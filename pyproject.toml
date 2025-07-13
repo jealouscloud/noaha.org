@@ -12,13 +12,13 @@ dependencies = [
     "pyyaml>=6.0.2",
     "sqlalchemy>=2.0.41",
     "loguru>=0.7.3",
+    "gunicorn>=23.0.0",
 ]
 readme = "README.md"
 requires-python = ">= 3.8"
 
 [project.scripts]
-"web-demo" = "web:main"
-"web-demo-live" = "web.server:live_reload"
+"noaha.org" = "web:main"
 
 [tool.rye.scripts]
 "dev" = "python live-reload.py"
