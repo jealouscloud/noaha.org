@@ -1,6 +1,7 @@
 import html_compose as ht
 
 from .. import models
+from ..markdown import read_markdown
 from . import blog, common
 
 
@@ -22,3 +23,19 @@ def home():
 
 def blog_page(post: models.blog.Post):
     return common.create(content=blog.post(post))
+
+
+def about_page():
+    return common.create(
+        content=ht.section(
+            id="post-content",
+            class_="content",
+        )[
+            ht.article(class_="o-card")[
+                ht.h2()["About Me"],
+                # horizontal split
+                ht.hr(),
+                ht.unsafe_text(read_markdown("content/about.md").html_content),
+            ],
+        ]
+    )
