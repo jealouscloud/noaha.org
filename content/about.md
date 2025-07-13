@@ -11,9 +11,11 @@ I'm a developer at heart.
 Some things I can show you:
 
 #### LineRider Advanced
-
+- 2015 - 2019
 - Website: [LineRider Advanced](https://linerideradvanced.com) ([git](https://github.com/jealouscloud/linerider-advanced))
 - Spiritual successor to a deterministic physics flash game.
+- Built with raw OpenGL / no game engine. 
+  The spirit of the project reverse engineered the physics of the original flash game.
 - As part of this project I had to fork the Gwen UI library originally by Garry Newman in [gwen-lra](https://github.com/jealouscloud/gwen-lra).  
   At 188 commits, +36,221/-10,248 lines, this was a pretty deep dive.  
   Far from the only time I've gotten deep into the technicals of UI display, though.
@@ -44,3 +46,12 @@ I have done:
   & integraiton with a custom PAM module for SSH 2fa
 * Hypervisor & platform R&D, most recently Incus
 * Little small-purpose-high-impact workflow sites
+
+## Other projects I've done
+No sources here. Wouldn't wanna get in trouble.
+
+- Multiplayer anticheat reverse-engineering and bypass.
+  - Keywords: Themida, heartbeat emulation, VMProtect, CRC patches
+- Multiplayer game packet editing tools.
+  - Reminder to never trust the client
+  - Keywords: Currency generation, my first SaaS, building my own anti-piracy
