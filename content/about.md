@@ -21,7 +21,7 @@ Some things I can show you:
 
 #### html-compose
 
-- Python Library: [GitHub](https://github.com/jealouscloud/html-compose) / [pypi](https://pypi.org/project/html-compose/) [documentation](https://jealouscloud.github.io/html-compose/html_compose.html)
+- Python Library: [GitHub](https://github.com/jealouscloud/html-compose) / [pypi](https://pypi.org/project/html-compose/) and [documentation](https://jealouscloud.github.io/html-compose/html_compose.html)
 - Thesis statement: Add just a little abstraction to the HTML generation process and you can solve friction in writing markup.
 - Fun fact: This website is built with html-compose.
 
