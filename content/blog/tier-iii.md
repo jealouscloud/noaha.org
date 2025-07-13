@@ -2,10 +2,15 @@
 post-date: 5-16-25
 slug: tier-iii
 id: 3
+display: false
 ---
-Take care of your team. If they aren't healthy, you won't be.
 
-i could just stop here. Because I care about my self, I won't.
+Take care of your team. Their well-being is your well-being.
+
+I’m writing this because I’ve been thinking a lot about how to organize a Tier 3 
+group. 
+A lot of what we do relies on unspoken knowledge that deserves to be written
+down.
 
 As a team, we are the convergence of technology and strategy.
 We are the foundation upon which the company operates.
@@ -34,20 +39,27 @@ The sign post:
 ### HELP NOT WANTED:
 
 - Follower ("I don't follow, but I will agree")
-- Poor contributors: Not able to seek
-- Disinterested learners: If you aren't taking notes, we aren't taking you.
+- Poor contributors: Not able to seek own answers. Would do something wrong 
+before they would ask for help.
+- Disinterested learners: Please take notes.
 - Lost, won't tell you.
-- Dead eyes
-- Does not use git like a human
+- Does not use git to annotate audit trail
   - ~~Updated main.py~~
-    - What for?
+    - What for? A code format? Syntax/logic simplification?
   - ~~code refactor~~
-    - Cool: Why did you do this?
+    - Why did you do this? Are you prepping for another change? 
 
 ---
 
-So you're the poor sop who they let into the tavern. You beat the quiz and sent
-you to the queue. It's a long queue, there's so much they didn't tell you.
+Imposter syndrome is a common experience in technical teams. I highlight here
+what is undesired because truly what we want is a team mate.
+
+---
+
+So. You passed the hiring trial and made it into our tavern.
+Shortly after, you're assigned to the queue. 
+It’s a long one, and there’s a lot they didn’t tell you. Some of the cobwebs are
+older than your entire tenure.
 
 And you thought you could help.
 You can, just not like you thought.
@@ -81,7 +93,8 @@ Prescriptions
 # Domain Definitions
 
 A common understanding of a domain paves the way for structured work.
-A domain should be defined with as many of these properties fleshed out as possible.
+A domain should be defined with as many of these properties fleshed out as is
+reasonably possible.
 
 - Name / identity
 - Terms, properties, lingo
@@ -120,7 +133,10 @@ We like tasks with all the information we need to complete.
 * Attempt
 * Result
 
-I would like to use this as the core unit.
+Achieving excellence in this core unit is paramount.
+<!-- Getting better at this core unit is something we can discuss as a team. -->
+
+<!-- I would like to use this as the core unit.
 Tasks are punched in.
 You may end up on a tangent.
 Log where your tangent took you.
@@ -129,7 +145,7 @@ If the task deviates as written, you:
 * Give a comment regarding the deviation
 * Change the task status to pending review
 
-When you exceed the estimate, a message blips in a channel. You're pinged and ask if you need help
+ -->
 
 
 # Solid Contributions
@@ -156,7 +172,18 @@ Some tips:
 * Separate logic types where you can: databases, endpoints, application logic, 
 process calls
 * Define variables where you could reasonably use them later and implementing 
-correctly now is relatively simple.
+correctly now is relatively simple. An example of this would be writing a 
+function with parameters that make the function flexible. i.e. 
+  ```python
+  def run(cmd, shell=True):
+      subprocess.run(cmd, shell=shell)
+  ```
+  instead of
+
+  ```python
+  def run_cmd(cmd):
+    subprocess.run(cmd, shell=True)
+  ```
 
 ## Leaving a trail
 We might have to follow our own footsteps one day to understand why a change 
@@ -190,3 +217,5 @@ When doing this:
 checking in with team members can help with this goal.
 * Try to use git early, including using a branch when you start work.
 * Ensure there's accurately placed documentation.
+* Remember that it is quite rare for a component to be set-and-forget. 
+  Dilligence pays dividends
