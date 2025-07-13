@@ -18,7 +18,7 @@
         hr {
             flex-grow: 1;
             border-style: dashed;
-            border-color: blue;
+            border-color: var(--pico-primary);
         }
 
         /* Post date */
