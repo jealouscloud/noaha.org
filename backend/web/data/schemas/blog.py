@@ -9,7 +9,9 @@ Base = declarative_base()
 
 class Posts(Base):
     __tablename__ = "posts"
-    id = sqlalchemy.Column(sqlite_dialect.INTEGER(), primary_key=True)
+    id = sqlalchemy.Column(
+        sqlite_dialect.INTEGER(), primary_key=True, autoincrement=True
+    )
     filepath = sqlalchemy.Column(sqlite_dialect.TEXT())
     title = sqlalchemy.Column(sqlite_dialect.TEXT())
     slug = sqlalchemy.Column(sqlite_dialect.TEXT())

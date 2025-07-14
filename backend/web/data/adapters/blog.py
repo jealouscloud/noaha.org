@@ -101,7 +101,7 @@ class SqliteBlogPostsAdapter(SqliteConnector):
             )
         ).one_or_none()
 
-        def md_data():
+        def md_data(want_id: bool = True) -> dict:
             """
             generate markdown content and metadata
             """
@@ -133,9 +133,21 @@ class SqliteBlogPostsAdapter(SqliteConnector):
             if mtime < created.timestamp():
                 mdatetime = now
 
+            want_id = True
+
+            if (
+                "id" in md.frontmatter
+                and self.execute(
+                    select(1).where(post.id == md.frontmatter.get("id"))
+                ).one_or_none()
+            ):
+                # no conflicts, the md ids are a suggestion
+                want_id = False
+
             self.execute(
                 insert(post).values(
-                    dict(last_edit=mdatetime, created=created) | md_data()
+                    dict(last_edit=mdatetime, created=created)
+                    | md_data(want_id=want_id)
                 )
             )
             return
@@ -150,7 +162,7 @@ class SqliteBlogPostsAdapter(SqliteConnector):
                     dict(
                         last_edit=mdatetime,
                     )
-                    | md_data()
+                    | md_data(want_id=False)
                 )
             )
         self.connection.commit()
