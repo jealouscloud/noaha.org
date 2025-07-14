@@ -1,9 +1,11 @@
+from pathlib import Path
+
 from flask import Flask
 
 from . import hypertext
 from .data import store
 
-app = Flask(__name__, static_folder="../../public")
+app = Flask(__name__, static_folder=Path("public").resolve())
 store.init()
 
 
