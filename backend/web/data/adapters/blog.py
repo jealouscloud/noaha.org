@@ -106,7 +106,7 @@ class SqliteBlogPostsAdapter(SqliteConnector):
             generate markdown content and metadata
             """
             md = read_markdown(file_path)
-            id = md.frontmatter.get("id", None)
+            id = md.frontmatter.get("id", None) if want_id else None
             return {
                 "filepath": str(file_path),
                 "slug": md.frontmatter.get("slug", file_path.stem),
