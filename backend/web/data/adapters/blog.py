@@ -8,6 +8,7 @@ from web.markdown import read_markdown
 
 from ..connectors.sqlite import SqliteConnector
 from ..schemas import blog
+from . import param_check
 
 
 class types:
@@ -43,9 +44,8 @@ class SqliteBlogPostsAdapter(SqliteConnector):
         Get all blog posts.
         :return: A list of blog posts.
         """
-        conn = self.connection
         post = blog.Posts
-        result = conn.execute(
+        result = self.execute(
             select(post.title, post.slug, post.created, post.preview)
             .where(post.display)
             .order_by(post.id.desc())
@@ -53,7 +53,7 @@ class SqliteBlogPostsAdapter(SqliteConnector):
             .offset(offset)
             .limit(limit)
         )
-
+        param_check(result, types.post_description)
         return [types.post_description(*row) for row in result.fetchall()]
 
     def get_post_by_slug(self, slug: str):
@@ -68,8 +68,9 @@ class SqliteBlogPostsAdapter(SqliteConnector):
             select(
                 post.id, post.title, post.slug, post.content, post.created
             ).where(post.slug == slug)
-        ).one_or_none()
-        if result is not None:
+        )
+        data = result.one_or_none()
+        if data is not None:
 
             class Post(NamedTuple):
                 id: int
@@ -78,7 +79,8 @@ class SqliteBlogPostsAdapter(SqliteConnector):
                 content: str
                 created: datetime
 
-            return Post(*result)
+            param_check(result, Post)
+            return Post(*data)
         else:
             return None
 
