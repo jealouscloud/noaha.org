@@ -4,7 +4,8 @@ from typing import NamedTuple
 
 from loguru import logger
 from sqlalchemy import insert, select, update
-from web.markdown import read_markdown
+
+from backend.markdown import read_markdown
 
 from ..connectors.sqlite import SqliteConnector
 from ..schemas import blog

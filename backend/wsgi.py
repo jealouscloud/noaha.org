@@ -1,5 +1,5 @@
 """
-Run gunicorn wsgi server.
+Production script to gunicorn wsgi server.
 """
 
 import os
