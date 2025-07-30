@@ -1,3 +1,1 @@
-from . import blog
-
-__all__ = ["blog"]
+from . import blog as blog
