@@ -8,7 +8,7 @@ from sqlalchemy import insert, select, update
 from backend.markdown import read_markdown
 
 from ..connectors.sqlite import SqliteConnector
-from ..schemas import blog
+from ..schemas import blog_schema
 from . import param_check
 
 
@@ -27,7 +27,7 @@ class SqliteBlogPostsAdapter(SqliteConnector):
     def init_schema(self) -> None:
         assert self.conn is None, "Database connection already established"
         with self:
-            blog.Base.metadata.create_all(self.engine)
+            blog_schema.Base.metadata.create_all(self.engine)
 
     @staticmethod
     def init():
@@ -45,7 +45,7 @@ class SqliteBlogPostsAdapter(SqliteConnector):
         Get all blog posts.
         :return: A list of blog posts.
         """
-        post = blog.Posts
+        post = blog_schema.Posts
         result = self.execute(
             select(post.title, post.slug, post.created, post.preview)
             .where(post.display)
@@ -64,7 +64,7 @@ class SqliteBlogPostsAdapter(SqliteConnector):
         :return: The blog post if found, otherwise None.
         """
         assert self.conn, "Database connection not established"
-        post = blog.Posts
+        post = blog_schema.Posts
         result = self.execute(
             select(
                 post.id, post.title, post.slug, post.content, post.created
@@ -97,7 +97,7 @@ class SqliteBlogPostsAdapter(SqliteConnector):
             last_edit: datetime
 
         now = datetime.now().astimezone()
-        post = blog.Posts
+        post = blog_schema.Posts
         result = self.execute(
             select(post.id, post.last_edit).where(
                 post.filepath == str(file_path)
