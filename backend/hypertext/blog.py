@@ -13,10 +13,10 @@ from html_compose import (
     unsafe_text,
 )
 
-from ..models import blog
+from ..models import blog_models
 
 
-def post(post: blog.Post):
+def post(post: blog_models.Post):
     return section(
         id="post-content",
         class_="content",
@@ -31,7 +31,7 @@ def post(post: blog.Post):
     ]
 
 
-def page_list(posts: list[blog.Post]):
+def page_list(posts: list[blog_models.Post]):
     return section(id="post-list", class_="content")[
         section(class_="o-card")[
             ul(class_="o-post-list")[

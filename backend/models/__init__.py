@@ -2,4 +2,4 @@
 Models in use by the application.
 """
 
-from . import blog as blog
+from . import blog_models as blog

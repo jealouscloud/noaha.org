@@ -13,7 +13,7 @@ Avoid: store.get_adapter().query(...), exposing adapters to consumers
 
 from pathlib import Path
 
-from ..models import blog
+from .. import models
 from .adapters.blog_adapter import SqliteBlogPostsAdapter
 from .adapters.users_adapter import SqliteUsersAdapter
 
@@ -31,7 +31,7 @@ def blog_post(slug: str):
     with adapter:
         result = adapter.get_post_by_slug(slug)
         if result:
-            return blog.Post(
+            return models.blog.Post(
                 title=result.title,
                 slug=result.slug,
                 content=result.content,
@@ -47,7 +47,7 @@ def post_list(offset: int = 0, limit: int = 100):
         result = adapter.get_posts(offset, limit)
         for row in result:
             postlist.append(
-                blog.Post(
+                models.blog.Post(
                     title=row.title,
                     slug=row.slug,
                     content="",
