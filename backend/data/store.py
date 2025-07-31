@@ -14,7 +14,7 @@ Avoid: store.get_adapter().query(...), exposing adapters to consumers
 from pathlib import Path
 
 from ..models import blog
-from .adapters.blog import SqliteBlogPostsAdapter
+from .adapters.blog_adapter import SqliteBlogPostsAdapter
 from .adapters.users import SqliteUsersAdapter
 
 
