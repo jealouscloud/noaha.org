@@ -6,7 +6,7 @@ from typing import NamedTuple
 from sqlalchemy import insert, select, update
 
 from ..connectors.sqlite import SqliteConnector
-from ..schemas import users
+from ..schemas import users_schema
 
 
 class types:
@@ -25,7 +25,7 @@ class SqliteUsersAdapter(SqliteConnector):
     def init_schema(self) -> None:
         assert self.conn is None, "Database connection already established"
         with self:
-            users.Base.metadata.create_all(self.engine)
+            users_schema.Base.metadata.create_all(self.engine)
 
     @staticmethod
     def init():
@@ -43,7 +43,7 @@ class SqliteUsersAdapter(SqliteConnector):
         """
         conn = self.connection
         now = datetime.now().astimezone()
-        session = users.Session
+        session = users_schema.Session
         result = conn.execute(
             select(session.user_id, session.expiry).where(
                 session.expiry > now,
@@ -76,8 +76,8 @@ class SqliteUsersAdapter(SqliteConnector):
         token_hash = md5(token.encode("utf-8")).hexdigest()
 
         now = datetime.now().astimezone()
-        user = users.User
-        session = users.Session
+        user = users_schema.User
+        session = users_schema.Session
 
         self.execute(
             update(user).where(user.id == user_id).values(last_login=now)
@@ -100,7 +100,7 @@ class SqliteUsersAdapter(SqliteConnector):
     def add_user(self, user: str, email: str):
         assert self.conn, "Database connection not established"
         self.conn.execute(
-            insert(users.User).values(
+            insert(users_schema.User).values(
                 name=user, email=email, last_login=datetime.now().astimezone()
             )
         )
@@ -109,11 +109,11 @@ class SqliteUsersAdapter(SqliteConnector):
         assert self.conn, "Database connection not established"
         result = self.conn.execute(
             select(
-                users.User.id,
-                users.User.name,
-                users.User.email,
-                users.User.last_login,
-            ).where(users.User.id == user_id)
+                users_schema.User.id,
+                users_schema.User.name,
+                users_schema.User.email,
+                users_schema.User.last_login,
+            ).where(users_schema.User.id == user_id)
         )
         data = result.fetchone()
         if data is None:

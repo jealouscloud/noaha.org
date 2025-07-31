@@ -15,7 +15,7 @@ from pathlib import Path
 
 from ..models import blog
 from .adapters.blog_adapter import SqliteBlogPostsAdapter
-from .adapters.users import SqliteUsersAdapter
+from .adapters.users_adapter import SqliteUsersAdapter
 
 
 def init():

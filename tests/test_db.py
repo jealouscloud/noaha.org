@@ -1,7 +1,9 @@
 from datetime import datetime
 
 import backend.data.connectors.sqlite as sqlite_connector
-from backend.data.adapters.users import SqliteUsersAdapter as users_adapter
+from backend.data.adapters.users_adapter import (
+    SqliteUsersAdapter as users_adapter,
+)
 
 
 def test_users():
