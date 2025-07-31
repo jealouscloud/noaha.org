@@ -21,9 +21,7 @@ assert shutil.which("pnpm"), "pnpm not found, please install it."
 
 
 live.server(
-    daemon=live.ShellCommand(
-        "rye run flask --app  ./backend/web/server.py run"
-    ),
+    daemon=live.ShellCommand("rye run flask --app  ./backend/server.py run"),
     daemon_delay=0.2,
     conds=[
         live.WatchCond(
