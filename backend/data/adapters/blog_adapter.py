@@ -85,6 +85,24 @@ class SqliteBlogPostsAdapter(SqliteConnector):
         else:
             return None
 
+    def get_markdown_for_slug(self, slug: str) -> str:
+        """
+        Get the markdown content for a blog post by its slug.
+        :param slug: The slug of the blog post.
+        :return: The markdown content of the blog post.
+        """
+
+        assert self.conn, "Database connection not established"
+        post = blog_schema.Posts
+        result = self.execute(select(post.filepath).where(post.slug == slug))
+        data = result.one_or_none()
+        if data:
+            filepath = Path(data[0])
+            if not filepath.exists():
+                raise FileNotFoundError(f"File {filepath} not found")
+            return filepath.read_text(encoding="utf-8")
+        return ""
+
     def sync_file(self, file_path: Path):
         """
         Sync a markdown file to the database.

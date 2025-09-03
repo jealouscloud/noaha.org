@@ -40,6 +40,17 @@ def blog_post(slug: str):
     return None
 
 
+def get_post_markdown(slug: str):
+    """
+    Get the markdown content for a blog post by its slug.
+    :param slug: The slug of the blog post.
+    :return: The markdown content of the blog post if found, otherwise None.
+    """
+    adapter = SqliteBlogPostsAdapter()
+    with adapter:
+        return adapter.get_markdown_for_slug(slug)
+
+
 def post_list(offset: int = 0, limit: int = 100):
     adapter = SqliteBlogPostsAdapter()
     postlist = []
