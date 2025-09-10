@@ -12,4 +12,4 @@ That I like.
 
 Something I can be proud of.
 
-I gave a big talk on Friday I'm hoping was received well.
+<!-- I gave a big talk on Friday I'm hoping was received well. -->
