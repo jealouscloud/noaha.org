@@ -5,6 +5,7 @@ I'm a developer at heart.
 - Computers were faster when we built for the CPU and not the browser
 - Apple knows what you want but if you don't want to be exploited 
   you'll have to intuit their lessons yourself
+- The web ecosystem is built on a load of hacks and the platform as we know it is much worse than it could be. To this end, I think TypeScript is a mistake that highlights a real problem space.
 
 ## Projects
 
@@ -45,7 +46,7 @@ I have done:
 * Scaled up [Wazuh](https://wazuh.com/) Integration with a bunch of bespoke use-case specific code
 * Integrated "big data" monitoring pipelines where sometimes a vendor worked and sometimes I had to get my own hands dirty.
 * Webauthn based security gateways mandating specific hardware security keys 
-  & integraiton with a custom PAM module for SSH 2fa
+  & integration with a custom PAM module for SSH 2fa
 * Hypervisor & platform R&D, most recently Incus
 * Little small-purpose-high-impact workflow sites
 
