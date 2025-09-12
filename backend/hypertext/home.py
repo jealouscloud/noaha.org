@@ -18,7 +18,7 @@ def home():
                 " my personal website.",
                 br2(),
                 "It's a bit of a work in progress. "
-                "I'm trying to avoid frameworks while solving the problems that traditional frameworks solve. ",
+                "It's kind of my pilot for how I'd like to manage web projects. ",
                 ht.br(),
                 "To that end, this site is built with ",
                 ht.a(href="https://github.com/jealouscloud/html-compose")[
