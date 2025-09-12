@@ -5,7 +5,7 @@ slug: motivations
 id: 6
 ---
 
-I've always taken quite a great deal of pride in the things I produce. 
+I've always taken a great deal of pride in the things I produce. 
 It's not just that I made it, usually it's that I felt like I had the _time_ to
 make it _right_.
 
@@ -33,20 +33,27 @@ What happens is I end up identifying a real problem, and a real solution, and
 it takes more from me than I expect. Interdisciplinary problems have 
 interdisciplinary solutions.
 
-Come the end of the night, I have nothing left for myself except the desire to 
-disconnect. Hmm.
+I have heard and practice awareness of the fact you can lean too hard into
+"fixing" everything. With this in mind, I still can't stop myself from
+trying to make sure the machine I'm a part of is well oiled.
+
+Come the end of the night, I often find myself spent, simply wanting to 
+disconnect.
+
 
 ## Play
 It would be all I loved to do to write and test code in my spare time. Truly,
 demoing a new idea could be one of the most exciting ways to spend a night 
 alone.
 
-Unfortunately these muscles, both real and metaphorical are stretched too thin
+Unfortunately these muscles, both real and metaphorical are stretched thin
 in the day-to-day. Somehow, somewhere, it got difficult to distinguish personal
 projects from work projects. Something about being on "all the time".
 
 Shame! I think my favorite thing to do of all time is solve a real persons 
-problems with code. I guess work is a fine enough niche.
+problems with code. 
+
+I guess work is a fine enough niche.
 
 ## The AI of it all
 I have a "code is poetry" type of stance at this time, September of 2025.
@@ -93,22 +100,18 @@ your time, AI -that- guy to look at you and ask "is anything worth your time?"
 Who can say how the technology industry will evolve. Move fast and break things
 is a terrible motto but things certainly do happen. 
 
-I would certainly never want to be a part of the team on the 
-[Tea app](https://apnews.com/article/tea-app-data-breach-leak-4chan-c95d5bb2cabe9d1b8ec0ca8903503b29)
+I know where I don’t want to be: building products that trade security or 
+durability for short-term growth. I’d rather focus on democratizing 
+comprehension and building systems that prioritize security and longevity over 
+growth-at-all-costs.
 
-Nor the team on 
-Lovable](https://www.forbes.com/sites/iainmartin/2025/07/23/vibe-coding-turned-this-swedish-ai-unicorn-into-the-fastest-growing-software-startup-ever/), 
-who _seems_ to be fine for now. At least, until they have to go full SaaS.
+Technology that lasts years, not days, will eternally be my pursuit, and
+that’s the mindset I intend to bring everywhere I go. I really love to solve
+problems that are felt everywhere.
 
-I don't quite know where I'll fit in your little industry, but definitely not
-there. I'd rather democratize comprehension instead of 
-prompt-a-tech-debt-node-app.
-
-Technology that lasts years, not days, will eternally be my pursuit.
-
-Alas, the digital biosphere's getting pretty difficult to inhabit for a regular
+The digital biosphere's getting pretty difficult to inhabit for a regular
 person.
 
-Maybe it's better to just go outside. You know, I heard
+Sometimes it's nice to just go outside. You know, I heard
 
 you can just do things.
