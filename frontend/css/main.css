@@ -78,6 +78,7 @@
 @import "./objects/post.css" layer(objects);
 @import "./objects/post-list.css" layer(objects);
 @import "./objects/header.css" layer(objects);
+@import "./objects/frets-embed.css" layer(objects);
 /* COMPONENTS */
 /* UTILITIES */
 @import "npm:highlight.js/scss/dark.scss" layer(elements);

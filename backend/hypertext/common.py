@@ -20,6 +20,7 @@ def header():
         nav(class_=["navbar"])[
             a(href="/blog")["blog"],
             a(href="/about")["about"],
+            a(href="/guitar")["guitar"],
         ],
     ]
 

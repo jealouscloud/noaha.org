@@ -42,3 +42,31 @@ def about():
             unsafe_text(read_markdown("content/about.md").html_content),
         ],
     ]
+
+
+def frets():
+    return ht.section(
+        id="post-content",
+        class_="content",
+    )[
+        ht.article(class_="o-card")[
+            ht.h2()["Frets Tool"],
+            ht.p[
+                "A tool to help you visualize guitar fretboards. ",
+                "It would be more built out if it didn't already fit my needs.",
+                ht.br(),
+                "This can be quite handy for writing or learning music with a "
+                "little bit of interval theory knowledge.",
+                ht.br(),
+                "I would really love to return to it if I ever became more life, less work balanced. ",
+                ht.br(),
+                "For now, here it is unpolished. Try writing in a key!",
+            ],
+            ht.hr(),
+            ht.div(class_="o-frets-embed")[
+                ht.iframe(
+                    src="https://noaha.dev/frets-tool?theme=winter&embed=true"
+                ),
+            ],
+        ],
+    ]

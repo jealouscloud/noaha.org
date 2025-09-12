@@ -24,6 +24,11 @@ def about_page():
     return hypertext.pages.about_page()
 
 
+@app.route("/guitar")
+def guitar_page():
+    return hypertext.pages.guitar()
+
+
 @app.route("/blog/<slug>")
 def blog_post(slug: str):
     post = store.blog_post(slug)

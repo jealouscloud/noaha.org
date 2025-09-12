@@ -21,3 +21,7 @@ def blog_list_page(posts: list[models.blog.Post]):
 
 def about_page():
     return create(content=home.about())
+
+
+def guitar():
+    return create(content=home.frets())
